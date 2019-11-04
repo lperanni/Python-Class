@@ -22,7 +22,7 @@ def connect_to_node_3():
 def send_message(recipient):
   global currentMessage
   while True:
-    currentMessage = input("Enter Message: ")
+    currentMessage = input()
     recipient.sendall(str.encode(currentMessage))
 
 def pipeline(prev, following):

@@ -8,25 +8,12 @@ links = [host]
 currentIndex = 0
 
 
-'''
-def connect_to_host():
-  global host
-  PORT = 80
-  host_connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-  host_connection.connect((host, PORT))
-  return host_connection
-
-def send_request(client):
-  global host
-  request = "GET / HTTP/1.1\r\nHost:%s/\r\n\r\n" % host
-  client.send(request.encode())
-  response = client.recv(2000)  
-  return response
-
-'''
 
 def send_request_with_requests_lib(link):
-  response = requests.get('http://' + link)
+  if(check_if_full_link(link)):
+    response = requests.get(link)
+  else:
+    response = requests.get('http://' + link)
   return response
 
 def print_info(body):
@@ -55,7 +42,7 @@ def crawl(index):
   global links
   global host
   linksToCheck = []
-  print("Currently visited: " + links[index])
+  print("Currently visited: " + links[index] + "with index: " + str(index))
   body = send_request_with_requests_lib(links[index])
   if(body.status_code != 200):
     return 
@@ -86,10 +73,5 @@ for i in range(50):
 
 
 
- # client = connect_to_host()
-# http_response = send_request(client).decode()
 
-# links = re.findall(r'a href=[\'"]?([^\'" >]+)', http_response)
-
-# print(http_response)
 
