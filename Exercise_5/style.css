@@ -1,0 +1,57 @@
+html {
+  background: url("./assets/duck.jpg");
+  background-size: cover;
+}
+
+h1 {
+  text-align: left;
+  font-size: 400%;
+  margin-bottom: 100px;
+}
+
+.content {
+  margin-top: 50px;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.btn {
+  font-size: 180%;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+  background-color: blue;
+}
+
+.btn:first-of-type{
+  margin-left: 50px;
+}
+
+.register-form {
+  font-size: 150%;
+  border: 2px solid black;
+  width: max-content;
+  padding: 20px;
+  margin-top: 200px;
+  margin-left: 200px;
+  background-color: blue;
+}
+
+.register-form input {
+  display: block;
+  margin-bottom: 40px;
+  width: 300px;
+}
+
+.change {
+  background-color: white;
+  color: black;
+  padding: 5px;
+}
+
+.imgs {
+  background-color: rgba(0, 0, 0, 0.7);
+}
