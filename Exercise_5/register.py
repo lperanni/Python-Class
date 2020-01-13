@@ -9,8 +9,10 @@ if os.environ["REQUEST_METHOD"].upper() == "POST":
     username = params.getvalue("username")
     password = params.getvalue("password")
     repeat = params.getvalue("repeat_password")
+    question = params.getvalue("question")
+    answer = params.getvalue("answer")
     if password == repeat :
-        success = authentication.register(username, password)
+        success = authentication.register(username, password, question, answer)
         if success:
             print('Location: login.py')
 print()
@@ -20,6 +22,8 @@ print ('''<form class="register-form" method="POST">
 username <input type="text" name="username" />
 password <input type="password" name="password"/>
 Repeat password <input type="password" name="repeat_password"/>
+Security Question <input type="text" name="question" />
+Answer <input type="text" name="answer"/>
 <input type="submit" value="Register"/>
 </form>''')
 print('<a class="btn" href="login.py">Login</a>')

@@ -50,3 +50,4 @@ def get_session_data():
     else:
         data = None
     return data
+

@@ -15,6 +15,8 @@ if (os.environ["REQUEST_METHOD"].upper() == "POST"):
         session.add_to_session({"user_id": user_id}, session_id=session_id)
         print ('Location: upload.py')
 
+
+print("Content-type:text/html")
 print("")
 base.start_html()
 print ('''<form class="register-form" method="POST">
@@ -22,9 +24,9 @@ print ('''<form class="register-form" method="POST">
 username <input type="text" name="username" />
 password <input type="password" name="password"/>
 <input type="submit" value="Login"/>
-<a class="change" href="change_password.py">Change Password</a>
 </form>''')
 print('<a class="btn" href="register.py">Register</a>')
+print('<a class = "btn" href = "change_pass_first.py" > Change Password </a>')
 if (os.environ["REQUEST_METHOD"].upper() == "POST" and not success):
     print ("<div>Login Error</div>")
 base.finish_html()

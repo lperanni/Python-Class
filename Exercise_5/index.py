@@ -1,6 +1,11 @@
 #!/usr/bin/python3.7
 
 import base
+import db
+import session
+import json
+
+
 print()
 base.start_html()
 print("<h1>Welcome to Kartanje</h1>")
